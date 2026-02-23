@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Usaha Rumahan | Mulai Bisnis Mandiri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-brown: #8d6e63;
+            --light-brown: #d7ccc8;
+            --cream: #f5f5f5;
+            --accent-tan: #bcaaa4;
+            --dark-text: #4e342e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary-brown);
+            font-size: 1.4rem;
+        }
+
+        /* --- UPDATE: Hero Section dengan Background Bakery --- */
+        .hero {
+            padding: 120px 5%;
+            text-align: center;
+            /* Menggunakan overlay gelap agar teks putih terbaca jelas */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2072&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Memberikan efek paralaks */
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-transform: capitalize;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .price-badge {
+            background: #ff9800; /* Warna lebih mencolok */
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Product Gallery */
+        .product-section {
+            padding: 60px 5%;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            width: calc(30% - 20px);
+            min-width: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Keunggulan */
+        .benefits {
+            background: var(--light-brown);
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 60px 5%;
+        }
+
+        .testi-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            font-style: italic;
+            position: relative;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* --- UPDATE: CTA dengan Background Bakery --- */
+        .cta-container {
+            text-align: center;
+            padding: 100px 5%;
+            background: linear-gradient(rgba(78, 52, 46, 0.8), rgba(78, 52, 46, 0.8)), 
+                        url('https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128c7e;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            background: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .product-card { width: 100%; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">KaryaRumahan</div>
+        <div><i class="fas fa-home"></i> Bisnis Dari Rumah</div>
+    </header>
+
+    <section class="hero">
+        <h1>Paket Usaha Rumahan</h1>
+        <p>Paket lengkap, praktis, dan estetik untuk pemula.</p>
+        <p><strong>MULAI DARI</strong></p>
+        <div class="price-badge">Rp50.000 - Rp500.000</div>
+    </section>
+
+    <section class="product-section">
+        <h2 style="text-align: center; margin-bottom: 40px;">Koleksi Produk Kami</h2>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="kue7.jpg" alt="Produk 1">
+                <div class="product-info"><h4>Paket Starter A</h4></div>
+            </div>
+            <div class="product-card">
+                <img src="kue10.webp" alt="Produk 2">
+                <div class="product-info"><h4>Cheese Cake</h4></div>
+            </div>
+            <div class="product-card">
+                <img src="kue3.jpg" alt="Produk 3">
+                <div class="product-info"><h4>Kue Tart</h4></div>
+            </div>
+            <div class="product-card">
+                <img src="Packaging.jpg" alt="Produk 4">
+                <div class="product-info"><h4>Packaging Cantik</h4></div>
+            </div>
+            <div class="product-card">
+                <img src="alat1.jpg" alt="Produk 5">
+                <div class="product-info"><h4>Bahan Baku Pilihan</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <h2>Keunggulan Paket Usaha</h2>
+        <div class="benefit-grid">
+            <div>
+                <i class="fas fa-check-circle" style="font-size: 2rem; color: var(--primary-brown);"></i>
+                <h3>Siap Pakai</h3>
+                <p>Tidak perlu bingung mencari alat satu per satu.</p>
+            </div>
+            <div>
+                <i class="fas fa-heart" style="font-size: 2rem; color: var(--primary-brown);"></i>
+                <h3>Kualitas Premium</h3>
+                <p>Bahan yang kami kirim adalah kualitas terbaik di kelasnya.</p>
+            </div>
+            <div>
+                <i class="fas fa-truck-fast" style="font-size: 2rem; color: var(--primary-brown);"></i>
+                <h3>Pengiriman Aman</h3>
+                <p>Packing ekstra aman menggunakan bubble wrap tebal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 style="text-align: center; margin-bottom: 40px;">Testimoni Pelanggan</h2>
+        <div class="product-container">
+            <div class="testi-card" style="max-width: 400px;">
+                <p>"Paketnya rapi banget! Warna-warnanya suka sekali, sesuai foto. Modal 500rb tapi dapetnya banyak!"</p>
+                <footer style="background: transparent; text-align: right; color: var(--primary-brown); font-weight: bold; padding: 0;">- Maya, Bandung</footer>
+            </div>
+            <div class="testi-card" style="max-width: 400px;">
+                <p>"Sangat terbantu buat yang mau cari penghasilan tambahan di rumah. Panduannya jelas!"</p>
+                <footer style="background: transparent; text-align: right; color: var(--primary-brown); font-weight: bold; padding: 0;">- Andi, Semarang</footer>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-container">
+        <h2>Ingin Tanya-Tanya Dulu?</h2>
+        <p>Klik tombol di bawah untuk terhubung langsung dengan admin kami.</p>
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20paket%20usaha%20500rb" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Chat Admin Sekarang
+        </a>
+    </section>
+
+    <footer>
+        &copy; 2024 KaryaRumahan. Dibuat dengan penuh semangat.
+    </footer>
+
+</body>
+</html>
